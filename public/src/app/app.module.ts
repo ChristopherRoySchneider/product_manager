@@ -12,6 +12,12 @@ import { NewauthorComponent } from './newauthor/newauthor.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { AuthorByIdComponent } from './author-by-id/author-by-id.component';
 import { EditAuthorComponent } from './edit-author/edit-author.component';
+import { MarketplaceComponent } from './marketplace/marketplace.component';
+import { EditProductComponent } from './edit-product/edit-product.component';
+import { NewProductComponent } from './new-product/new-product.component';
+import { ViewSingleProductComponent } from './view-single-product/view-single-product.component';
+import { ViewAllProductsComponent } from './view-all-products/view-all-products.component';
+import { SplashComponent } from './splash/splash.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +28,13 @@ import { EditAuthorComponent } from './edit-author/edit-author.component';
     NewauthorComponent,
     PageNotFoundComponent,
     AuthorByIdComponent,
-    EditAuthorComponent
+    EditAuthorComponent,
+    MarketplaceComponent,
+    EditProductComponent,
+    NewProductComponent,
+    ViewSingleProductComponent,
+    ViewAllProductsComponent,
+    SplashComponent
   ],
   imports: [
     BrowserModule,

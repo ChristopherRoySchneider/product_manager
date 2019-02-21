@@ -1,3 +1,5 @@
+import { ViewSingleProductComponent } from './view-single-product/view-single-product.component';
+import { MarketplaceComponent } from './marketplace/marketplace.component';
 import { AuthorsComponent } from './authors/authors.component';
 // import { AlphaComponent } from './alpha/alpha.component';
 // import { BetaComponent } from './beta/beta.component';
@@ -8,18 +10,28 @@ import { Routes, RouterModule } from '@angular/router';
 import { NewauthorComponent } from './newauthor/newauthor.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { EditAuthorComponent } from './edit-author/edit-author.component';
+import { NewProductComponent } from './new-product/new-product.component';
+import { EditProductComponent } from './edit-product/edit-product.component';
+import { ViewAllProductsComponent } from './view-all-products/view-all-products.component';
+import { SplashComponent } from './splash/splash.component';
 const routes: Routes = [
-  { path: 'home',component: AuthorsComponent },
-  { path: 'new',component: NewauthorComponent },
-  // use a colon and parameter name to include a parameter in the url
-  { path: 'edit/:id', component: EditAuthorComponent },
-  // redirect to /alpha if there is nothing in the url
-  { path: '', pathMatch: 'full', redirectTo: '/home' },
-  // the ** will catch anything that did not match any of the above routes
+  { path: '', pathMatch: 'full', component: SplashComponent },
+  { path: 'marketplace',
+
+    component: MarketplaceComponent,
+    children: [
+
+      { path: '', pathMatch: 'full', component: ViewAllProductsComponent },
+      { path: 'new', component: NewProductComponent },
+      { path: 'edit/:id', component: EditProductComponent },
+      { path: 'view/:id', component: ViewSingleProductComponent }
+    ]
+  },
+
   { path: '**', component: PageNotFoundComponent }
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

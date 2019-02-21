@@ -35,6 +35,7 @@ app.set('view engine', 'ejs');
 // require('./server/config/tenrec_routes.js')(app)
 // require('./server/config/cake_routes.js')(app)
 require('./server/config/author_routes.js')(app)
+require('./server/config/product_routes.js')(app)
 app.all("*", (req,res,next) => {
     res.sendFile(path.resolve("./public/dist/public/index.html"))
   });
